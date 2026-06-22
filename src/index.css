@@ -1,0 +1,201 @@
+/* Claude UI Typography & Fonts */
+@font-face {
+    font-family: anthropicMono;
+    src: url(https://assets-proxy.anthropic.com/claude-ai/v1/_next/static/media/5ab84f5ed5bd55bd-s.p.woff2) format("woff2");
+    font-display: swap;
+    font-weight: 300 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: anthropicMono;
+    src: url(https://assets-proxy.anthropic.com/claude-ai/v1/_next/static/media/c25fe61b276783b5-s.p.woff2) format("woff2");
+    font-display: swap;
+    font-weight: 300 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'anthropicMono Fallback';
+    src: local("Arial");
+    ascent-override: 75.48%;
+    descent-override: 19.58%;
+    line-gap-override: 0.00%;
+    size-adjust: 131.49%;
+}
+
+@font-face {
+    font-family: KaTeX_Main;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://assets-proxy.anthropic.com/claude-ai/v1/_next/static/media/KaTeX_Main-Regular.0462f03b.woff2) format("woff2");
+}
+
+:root {
+  /* Font Family Definitions */
+  --font-mono: "anthropicMono", "anthropicMono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Claude Dark Theme Palette by default */
+  --accent-brand: 15 63.1% 59.6%;
+  --accent-000: 210 65.5% 67.1%;
+  --accent-100: 210 70.9% 51.6%;
+  --accent-200: 210 70.9% 51.6%;
+  --accent-900: 210 55.9% 24.6%;
+  
+  /* Background colors (HSL coordinates) */
+  --bg-000: 60 2.1% 18.4%;      /* Secondary card bg */
+  --bg-100: 60 2.7% 14.5%;      /* Core container bg */
+  --bg-200: 30 3.3% 11.8%;      /* Active states/borders */
+  --bg-300: 60 2.6% 7.6%;       /* App page background */
+  --bg-400: 0 0% 0%;
+  --bg-500: 0 0% 0%;
+  
+  /* Text colors (HSL coordinates) */
+  --text-000: 48 33.3% 97.1%;   /* High contrast text */
+  --text-100: 48 33.3% 97.1%;
+  --text-200: 50 9% 73.7%;      /* Normal body text */
+  --text-300: 50 9% 73.7%;
+  --text-400: 48 4.8% 59.2%;    /* Muted text */
+  --text-500: 48 4.8% 59.2%;
+  
+  /* Borders (HSL coordinates) */
+  --border-100: 50 9% 25%;
+  --border-200: 50 9% 20%;
+  --border-300: 50 9% 15%;
+
+  --success-color: #10b981;
+  --warning-color: #fbbf24;
+  --danger-color: #f87171;
+  --info-color: #38bdf8;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: hsl(var(--bg-300));
+  color: hsl(var(--text-200));
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Claude styled fonts */
+.font-mono {
+  font-family: var(--font-mono);
+  font-variant-ligatures: none;
+  font-feature-settings: "calt" 0, "liga" 0;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--bg-300));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border-100));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-500));
+}
+
+/* Card layout */
+.claude-card {
+  background-color: hsl(var(--bg-100));
+  border: 1px solid hsl(var(--border-200));
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.claude-card:hover {
+  border-color: hsl(var(--accent-brand) / 40%);
+  transform: translateY(-1px);
+}
+
+/* Table styling */
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+th {
+  font-weight: 600;
+  color: hsl(var(--text-400));
+  border-bottom: 1px solid hsl(var(--border-100));
+}
+tr.row-hover {
+  transition: background-color 0.15s ease;
+}
+tr.row-hover:hover {
+  background-color: hsl(var(--bg-000) / 40%) !important;
+}
+
+/* Buttons style matching Claude classes */
+.Button_primary__0oSjX {
+  background-color: hsl(var(--text-000));
+  color: hsl(var(--bg-300));
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.Button_primary__0oSjX:hover {
+  opacity: 0.9;
+}
+.Button_primary__0oSjX:active {
+  transform: scale(0.98);
+}
+
+.Button_secondary__Teecd {
+  background-color: transparent;
+  color: hsl(var(--text-000));
+  border: 1px solid hsl(var(--border-100));
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.Button_secondary__Teecd:hover {
+  background-color: hsl(var(--bg-200));
+}
+
+.Button_ghost__BUAoh {
+  background-color: transparent;
+  color: hsl(var(--text-200));
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.Button_ghost__BUAoh:hover {
+  background-color: hsl(var(--bg-200));
+  color: hsl(var(--text-000));
+}
+
+/* Form controls */
+input, select {
+  font-family: inherit;
+  background-color: hsl(var(--bg-200));
+  border: 1px solid hsl(var(--border-100));
+  color: hsl(var(--text-000));
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus, select:focus {
+  border-color: hsl(var(--accent-brand));
+}
